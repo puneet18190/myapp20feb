@@ -118,23 +118,26 @@ crossorigin="anonymous"></script>
     left:0; right:0;
     top:0; bottom:0;
     margin:auto;
-
+    background:white;
     /*this to solve "the content will not be cut when the window is smaller than the content": */
     max-width:100%;
     max-height:100%;
     overflow: hidden;
     text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4);
+
 
   }
 
     .content img {
       width: auto;
-      height: 120px;
+      height: 100px;
       display: block;
       margin: 0 auto;
-      margin-top: 0px;
-      transform: translateY(20px);
+      margin-top: 30px;
       opacity:0;
+      position: relative !important;
+      top: 0;
     }
 
 
@@ -149,23 +152,14 @@ crossorigin="anonymous"></script>
       text-align: center;
       display: block;
       margin: 0 auto;
-      margin-top: 50px;
+      margin-top: 0px;
       padding-bottom: 5px;
       opacity: 0;
       padding-top: 5px;
       z-index: 9999999999;
 
-      text-shadow:
-          0 0 2px white,
-          0 0 10px white,
-          0 0 20px #4d7e15,
-          0 0 30px #4d7e15,
-          0 0 40px #4d7e15,
-          0 0 70px #4d7e15,
-          0 0 80px #fc5931,
-          0 0 100px #fc5931;
 
-      background: -webkit-linear-gradient(white, rgba(255,255,255,0.5));
+      background: -webkit-linear-gradient(black, rgba(0,0,0,0.5));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
@@ -349,7 +343,7 @@ crossorigin="anonymous"></script>
     .stripe {
       display: none !important;
     }
-      
+
 
 
     .problem-area h1 {
@@ -979,7 +973,6 @@ crossorigin="anonymous"></script>
       left:0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0, rgba(0,0,0,1));
     }
 
     @keyframes move-up {
@@ -1160,15 +1153,15 @@ crossorigin="anonymous"></script>
   <div id="loading"></div>
 </div>
 
-<img class="left-logo" src="../vanmar.png"/>
 
 
-<img class="nav-logo" src="../vanmar.png"/>
 
 <div class="bg">
   <img class="bg-img" src="../poolside.jpg"/>
   <div class="gradient"></div>
   <div class="content">
+    <img class="nav-logo" src="../vanmar.png"/>
+
     <h1 style="z-index: 999999999 !important;">The monster of mortgage</h1>
     <button class="btn1" style="" onclick="window.location.href='/buy'">Buy A Home</button>
     <button class="btn2" style="background: #ff5734 !important;" onclick="window.location.href='/refinance'">Refinance</button>
@@ -1182,6 +1175,10 @@ crossorigin="anonymous"></script>
     <h1>First-Time Homeowner?</h1>
     <p>If you are a first time homeowner you may be eligible for discounts on your rate, closing costs and PMI. Our staff can assist you in calculating your discounts </p>
     <button>create an affordable plan</button>
+  </div>
+
+  <div class="video-div-container video-div-container2">
+    <img src="https://fm100.com/wp-content/uploads/2015/06/play-button-flat-fm100-grey.png"/>
   </div>
 
   <div class="panel light">
@@ -1387,7 +1384,7 @@ crossorigin="anonymous"></script>
       mainEmissive: 0,
       secondaryColor: 0xffffff,
       secondaryEmissive: 0,
-      detailColor: 0x999999,
+      detailColor: 0xfc5931,
       detailEmissive: 0
   };
 
