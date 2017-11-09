@@ -295,6 +295,18 @@ crossorigin="anonymous"></script>
       text-align: left;
     }
 
+    .no-stripe{
+      background:linear-gradient(#5A3F37,#2C7744) !important;
+      border-radius: .2em;
+      width: 600px !important;
+      color:white !important;
+
+    }
+
+    .no-stripe h1, .no-stripe p {
+      color: white !important;
+    }
+
     .second-panel-content h1 {
       font-family: "Open Sans",sans-serif;
       text-transform: uppercase;
@@ -319,6 +331,25 @@ crossorigin="anonymous"></script>
       transform: skew(0deg) rotate(0deg);
       position: relative !important;
     }
+
+    .second-panel {
+      overflow: visible !important;
+    }
+
+
+    .video-div-container {
+      height: 300px !important;
+      width: 400px !important;
+      display: block;
+      margin: 0 auto !important;
+      position: relative !important;
+      left: 0 !important;
+    }
+
+    .stripe {
+      display: none !important;
+    }
+
 
 
     .problem-area h1 {
@@ -1069,7 +1100,7 @@ crossorigin="anonymous"></script>
       left:0;
       width: 100%;
       height: 100%;
-      background:rgb(41,41,41);
+      background:black;
       z-index: 9999999999;
       transition: all 500ms ease-in-out;
     }
@@ -1087,6 +1118,38 @@ crossorigin="anonymous"></script>
 
     }
 
+
+    .video-div-container {
+      width: 600px;
+      height: 400px;
+      background:rgb(61,61,61);
+      margin-top: 100px;
+      position: absolute;
+      left: 50px;
+      top:0px;
+      z-index: 9999999;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,1);
+
+    }
+
+    .video-div-container2 {
+      right: 50px;
+      left: auto;
+    }
+
+    .video-div-container img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top:0;
+      left:0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+
+    }
 
 
 </style>
@@ -1128,17 +1191,43 @@ crossorigin="anonymous"></script>
 </div>
 
 
-
-
-
-
-<div  style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(https://i.pinimg.com/originals/96/78/5a/96785a4f7affaadeeeda0ac6adc43eff.jpg) center center no-repeat; background-size:cover; " class="second-panel">
-  <div class="second-panel-content panel2 mobile-change no-stripe">
-    <h1 style="color:black; width: 100%; font-size: 30px;">Understand Your Rights</h1>
-    <p style="color: black">Becoming a homeowner can mean a whole new set of rules. Understand your rights throughout the entire loan application process. You'll benefit greatly.</p>
+<div  class="second-panel">
+  <div class="second-panel-content panel2 mobile-change">
+    <h1 style=" width: 100%; font-size: 30px;">First Time Homeowner </h1>
+    <p >If you are a first time homeowner you may be eligible for discounts on your rate, closing costs and PMI. Our staff can assist you in calculating your discounts </p>
     <button>Contact Us With Your Questions</button>
   </div>
+
+  <div class="video-div-container">
+    <img src="https://fm100.com/wp-content/uploads/2015/06/play-button-flat-fm100-grey.png"/>
+  </div>
+
+
+  <div  class="panel light">
+    <div style="background: #fc5931 !important;" class="stripe stripe2 ">
+    </div>
+  </div>
 </div>
+
+<div style="background:url(../blue-bg.png) center center no-repeat;  background-size:200% 200%; " class="second-panel first-panel">
+  <div class="second-panel-content mobile-panel-content0">
+    <h1 style="color: white;">First-Time Homeowner?</h1>
+    <p style="color:white;">If you are a first time homeowner you may be eligible for discounts on your rate, closing costs and PMI. Our staff can assist you in calculating your discounts </p>
+    <button>create an affordable plan</button>
+  </div>
+
+  <div class="video-div-container video-div-container2">
+    <img src="https://fm100.com/wp-content/uploads/2015/06/play-button-flat-fm100-grey.png"/>
+  </div>
+
+  <div class="panel light">
+    <div style="background: #fc5931 !important;"  class="stripe ">
+    </div>
+  </div>
+</div>
+
+
+
 
 
 
@@ -1146,7 +1235,7 @@ crossorigin="anonymous"></script>
 <div  style=" background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://assets1.archetypes.com/wp-content/uploads/2015/10/shutterstock_33116836-e1446571988932.jpg) center center no-repeat; background-size:cover; " class="second-panel">
   <div class="second-panel-content panel2 mobile-change no-stripe">
     <h1 style="color:black; width: 100%; font-size: 30px;">Down Payment Insurance</h1>
-    <p style="color: black">Depending on the type of loan you are applying for, it could mean a down payment of up to 20%. Ask our staff today about our down payment assistance program.</p>
+    <p style="color: black">Depending on the type of loan you are applying for, <br/> it could mean a down payment of up to 20%. Ask our staff today <br/> about our down payment assistance program.</p>
     <button>Apply for your loan today</button>
   </div>
 </div>
@@ -1156,14 +1245,14 @@ crossorigin="anonymous"></script>
 <div style="   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://cdn-media-1.lifehack.org/wp-content/files/2015/06/Geniuenly-Happy-People.jpg) center center no-repeat; background-size: cover;" class="second-panel ">
   <div class="second-panel-content panel2 no-stripe">
     <h1>15+ Years Experience</h1>
-    <p>Becoming a homeowner can mean a whole new set of rules. Understand your rights throughout the entire loan application process. You'll benefit greatly.</p>
+    <p>Becoming a homeowner can mean a whole new set <br/> of rules. Understand your rights throughout the entire <br/> loan application process. You'll benefit greatly.</p>
     <button>create an affordable plan</button>
   </div>
 </div>
 
 <div  class="second-panel panels-container">
   <div class="panel-message">
-    <h1 style="letter-spacing: 1px">Get Peace Of Mind With <br/> <span style="font-weight: 300 !important;"> Exceptional Loan Options </span></h1>
+    <h1 style="letter-spacing: 1px">Get Peace Of Mind With <br/> <span style="font-weight: 300 !important;"> Exceptional Loan Services </span></h1>
   </div>
 
 
@@ -1193,9 +1282,9 @@ crossorigin="anonymous"></script>
   </div>
 </div>
 
-<div style=" background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(https://blog-cdn.static-homes.com/wp-content/uploads/sites/2/2016/07/Buying-a-Rental-Property2.jpg) center center no-repeat; background-size:cover;"  class="footer2">
+<div style=" background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(https://blog-cdn.static-homes.com/wp-content/uploads/sites/2/2016/07/Buying-a-Rental-Property2.jpg) center center no-repeat; background-size:cover; height: 130% !important;"  class="footer2">
 
-  <div style="margin-top: 50px;" class="footer-text">
+  <div style="margin-top: 150px;" class="footer-text">
     <h1>Get Peace Of Mind With <br/> Exceptional Loan Options</h1>
 
     <p>Becoming a homeowner can be exciting and stressful at the same time.
@@ -1205,7 +1294,7 @@ crossorigin="anonymous"></script>
   </div>
 
 
-  <div style="margin-top: 310px;" class="both-footer">
+  <div style="margin-top: 400px;" class="both-footer">
     <div class="left-footer-side">
       <h3>Contact Us</h3>
       <p>39249 Leopard St. Ste A <br/> Palm Desert, CA 92211</p>
@@ -1294,7 +1383,7 @@ crossorigin="anonymous"></script>
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   var WHITE = {
-      mainColor: 0xeeeeee,
+      mainColor: 0x229922,
       mainEmissive: 0,
       secondaryColor: 0xffffff,
       secondaryEmissive: 0,
