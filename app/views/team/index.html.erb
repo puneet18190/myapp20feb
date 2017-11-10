@@ -180,7 +180,6 @@
       width: 100%;
       text-align: center;
 
-
     }
 
     a.menu-trigger {
@@ -361,6 +360,10 @@
     }
 
 
+    .second-panel {
+      transform: translateY(150px) !important;
+    }
+
     .footer{
       left: 10px !important;
     }
@@ -368,6 +371,10 @@
       float: left !important;
     }
 
+
+    .first-panel h1, .first-panel p {
+      color: #4c7d15 !important;
+    }
 
 
 
@@ -519,6 +526,10 @@
     font-size: 11px;
     border-radius: .4em;
     margin-top: 30px;
+  }
+
+  .footer h1 {
+    color:black !important;
   }
 
   .stripe2 {
@@ -794,12 +805,13 @@
 </style>
 
 
-<img class="nav-logo" src="https://pbs.twimg.com/profile_images/448705171556548608/iVtYqy90_400x400.jpeg"/>
+<%= render 'partials/show_logo' %>
 
 <%= render 'partials/nav' %>
 
+
 <div  style="background: url(../green-bg.png) center center no-repeat;" class="second-panel">
-  <div  class="second-panel-content">
+  <div  class="second-panel-content first-panel">
     <h1 style="color: white">Kristen Martinez</h1>
     <p style="color: white">Kristen Martinez has been involved in the mortgage industry for over ten years. After earning her BA degree from Colorado State she began a career in sales which soon led to the mortgage industry. After becmouing a top producer for a lending agency she decded she wanted to "guide her own ship". She opened her first mortgage cmpany in 2006 and has since established two more real estate corporations where she now serves as President</p>
     <button>Contact Kristen</button>
