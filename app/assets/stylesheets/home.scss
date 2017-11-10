@@ -167,10 +167,11 @@ html,body {
 }
 
 .no-stripe{
-  background:linear-gradient(#5A3F37,#2C7744) !important;
+  background:none !important;
   border-radius: .2em;
   width: 600px !important;
   color:white !important;
+  box-shadow: none !important;
 
 }
 
