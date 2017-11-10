@@ -36,6 +36,7 @@ gem 'devise'
 
 
 gem 'aws-sdk'
+
 gem 'dropzonejs-rails'
 # video player
 gem 'videojs_rails'
