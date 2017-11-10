@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def refinance
 
   end
+
+  def video_gallery
+    @videos = Video.all
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028182905) do
+ActiveRecord::Schema.define(version: 20171110210714) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(version: 20171028182905) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mp4_file_name"
+    t.string "mp4_content_type"
+    t.integer "mp4_file_size"
+    t.datetime "mp4_updated_at"
+    t.string "poster_file_name"
+    t.string "poster_content_type"
+    t.integer "poster_file_size"
+    t.datetime "poster_updated_at"
   end
 
 end

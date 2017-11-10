@@ -2,7 +2,7 @@
 
 
   <div class="form">
-    <h1>Create your account to apply with <br/> <span style="font-weight: bold; font-family: 'Arial Black', sans-serif; font-size: 25px;">Vanmar Lending</span></h1>
+    <h1>Create your account to apply with <br/> Vanmar Lending</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -14,11 +14,11 @@
   <div class="field">
     <% if @minimum_password_length %>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "Password Confirmation" %>
   </div>
 
   <div class="actions">

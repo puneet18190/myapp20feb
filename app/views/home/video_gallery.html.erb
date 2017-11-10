@@ -1,0 +1,187 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<%= stylesheet_link_tag 'home' %>
+<%= stylesheet_link_tag 'media-queries' %>
+
+<style>
+
+
+  html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+    .bg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-div-container2 {
+      top: 50px !important;
+    }
+
+    .second-panel-content h1 , .second-panel-content p {
+      text-align: right !important;
+
+    }
+
+    .slide {
+      width: 100px;
+      margin-left: 10px;
+      height: 500px !important;
+      position: relative !important;
+    }
+
+    .slider {
+      z-index: 9999999 !important;
+
+    }
+
+    .video-div-container {
+      z-index: 999999999 !important;
+    }
+    .stripe {
+      position: absolute !important;
+      z-index: 0 !important;
+      top: -400px !important;
+      left: 500px !important;
+    }
+
+    .panel {
+      z-index: 0 !important;
+    }
+
+    .slick-next, .slick-prev {
+      position: absolute;
+      bottom: -70px;
+      right: 150px;
+      width: 50px;
+      height: 50px;
+      background: #fc5931;
+      color: white;
+      border:none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .slick-prev {
+      right: 220px !important;
+    }
+
+
+  @media only screen and (max-width: 1000px) {
+      .second-panel-content h1 {
+        text-align:center !important;
+        margin-top: 100px !important;
+        font-size: 20px !important;
+      }
+
+    .video-div-container {
+      margin-top: -20px !important;
+    }
+    .number {
+      color:black !important;
+      background: white;
+    }
+  }
+
+    .number {
+      color:white;
+      font-size:17px;
+      right: 70px !important;
+      position: absolute;
+      bottom: 50px;
+      color: white;
+      font-family: "Helvetica Neue",sans-serif;
+    }
+
+    .video-div-container {
+
+    }
+    .video-div-container video {
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100px;
+      height: 100px;
+    }
+
+    .second-panel-content {
+      height: 100px !important;
+    }
+
+
+    .menu-trigger {
+    }
+
+</style>
+
+<%= render 'partials/nav' %>
+<%= render 'partials/show_logo' %>
+
+
+
+
+  <div class="bg">
+    <div style="background:url(../top-view-bg.png) center center no-repeat;  background-size:200% 200%; " class="second-panel first-panel">
+      <div class="slider">
+        <% @videos.each do |video| %>
+          <div class="slide">
+            <div class="second-panel-content mobile-panel-content0">
+              <h1 style="color: white;"><%= video.name %></h1>
+              <p style="color:white;"><%= video.description %></p>
+            </div>
+            <div class="video-div-container video-div-container2">
+              <video  id="my_video_1" class="video-js vjs-default-skin" width="100%" height="350px"
+                      preload="auto"
+                      data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2, 2.5, 3.0], "controls":"true" }'
+              >
+                <source src="<%= video.mp4.url %>" type='video/mp4'>
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+              </video>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="panel light">
+        <div style="background: #1f3952 !important;"  class="stripe ">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<h1 class="number">1 / <%= @videos.count %></h1>
+
+
+
+<%= render 'partials/footer' %>
+<%= javascript_include_tag 'nav' %>
+
+
+<script>
+
+
+$(".slider").slick({
+
+
+});
+
+$(".slick-next").html(">");
+$(".slick-prev").html("<");
+
+
+var $status = $('.number');
+var $slickElement = $('.slider');
+
+$slickElement.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+    var i = (currentSlide ? currentSlide : 0) + 1;
+    $status.text(i + ' / ' + slick.slideCount);
+});
+
+</script>

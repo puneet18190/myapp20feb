@@ -1,0 +1,18 @@
+
+<h1>Customize Video Details</h1>
+
+<%= simple_form_for(@video,html:{multipart:true}) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :name %>
+
+    Description <%= f.text_area :description, :maxlength => 350 %>
+
+
+
+
+    <div class = "submit ">
+      <%= f.button :submit, class:'submit-btn btn ' %>
+    </div>
+
+<% end %>
