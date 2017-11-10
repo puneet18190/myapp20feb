@@ -1,41 +1,18 @@
-<link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-<title>Vanmar Lending</title>
-<script
-src="https://code.jquery.com/jquery-3.2.1.js"
-integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js">
-
-</script>
-<script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
-
-
-
 <div id="comingsoon"></div>
-
 <div class="loader">
   <div id="loading"></div>
 </div>
-
-
-
-
 <div class="bg">
   <img class="bg-img" src="../poolside.jpg"/>
   <div class="gradient"></div>
   <div class="content">
     <img class="nav-logo" src="../vanmar.png"/>
-
     <h1 style="z-index: 999999999 !important;">The monster of mortgage</h1>
     <button class="btn1" style="" onclick="window.location.href='/buy'">Buy A Home</button>
     <button class="btn2" style="background: #ff5734 !important;" onclick="window.location.href='/refinance'">Refinance</button>
   </div>
-
   <%= render 'partials/nav' %>
 </div>
-
 <div style="background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(https://www.bestcatcher.com/wp-content/uploads/2016/07/Proven_Ways_to_be_Happy.jpg) center center no-repeat;  background-size:cover; background-position: -200px 0;" class="second-panel first-panel">
   <div class="second-panel-content mobile-panel-content0">
     <h1>First-Time Homeowner?</h1>
@@ -46,13 +23,11 @@ crossorigin="anonymous"></script>
   <div class="video-div-container video-div-container2">
     <img src="https://fm100.com/wp-content/uploads/2015/06/play-button-flat-fm100-grey.png"/>
   </div>
-
   <div class="panel light">
     <div id="background" class="stripe ">
     </div>
   </div>
 </div>
-
 
 <div  class="second-panel">
   <div class="second-panel-content panel2 mobile-change">
@@ -66,7 +41,7 @@ crossorigin="anonymous"></script>
   </div>
 
 
-  <div  class="panel light">
+  <div class="panel light">
     <div style="background: #fc5931 !important;" class="stripe stripe2 ">
     </div>
   </div>
@@ -89,12 +64,6 @@ crossorigin="anonymous"></script>
   </div>
 </div>
 
-
-
-
-
-
-
 <div  style=" background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://assets1.archetypes.com/wp-content/uploads/2015/10/shutterstock_33116836-e1446571988932.jpg) center center no-repeat; background-size:cover; " class="second-panel">
   <div class="second-panel-content panel2 mobile-change no-stripe">
     <h1 style="color:black; width: 100%; font-size: 30px;">Down Payment Insurance</h1>
@@ -102,7 +71,6 @@ crossorigin="anonymous"></script>
     <button>Apply for your loan today</button>
   </div>
 </div>
-
 
 
 <div style="   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://cdn-media-1.lifehack.org/wp-content/files/2015/06/Geniuenly-Happy-People.jpg) center center no-repeat; background-size: cover;" class="second-panel ">
@@ -179,233 +147,224 @@ crossorigin="anonymous"></script>
 <%= render 'partials/footer' %>
 
 <script>
+    $(window).on("load", function(){
+        $(".loader").css({
+            opacity: 0
+        });
+
+        $(".content img").addClass("move-up");
+
+        setTimeout(function () {
+            $(".content h1").addClass("move-up")
+
+        },190);
+
+        setTimeout(function () {
+            $(".btn1").addClass("move-up")
+        },570);
+
+        setTimeout(function () {
+            $(".btn2").addClass("move-up")
+        },770);
+
+        $(".bg-img").addClass("bg-animation")
+    });
+    $(".menu-trigger").click(function () {
+        $(".nav3").css({
+            width: "300px",
+            opacity: "1"
+        });
+
+        $(".menu-trigger").css({
+            opacity: "0"
+        })
+    });
+
+    $(".x").click(function () {
+        $(".nav3").css({
+            width: "0px",
+            opacity: "0"
+        });
+        $(".menu-trigger").css({
+            opacity: "1"
+        })
+    });
+
+    $(window).on("load", function () {
+
+        $(window).on("scroll", function() {
+            if($(document).scrollTop() > 10){
+                $(".nav-logo").css({
+                    opacity: "1"
+                })
+            } else {
+                $(".nav-logo").css({
+                    opacity: "0"
+                })
+            }
+        });
+
+    });
 
 
-  $(window).on("load", function(){
-     $(".loader").css({
-         opacity: 0
-     });
+    'use strict';
 
-     $(".content img").addClass("move-up");
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-     setTimeout(function () {
-         $(".content h1").addClass("move-up")
+    var WHITE = {
+        mainColor: 0x229922,
+        mainEmissive: 0,
+        secondaryColor: 0xffffff,
+        secondaryEmissive: 0,
+        detailColor: 0xfc5931,
+        detailEmissive: 0
+    };
 
-     },190);
+    var ParticleSystem = function () {
+        function ParticleSystem() {
+            _classCallCheck(this, ParticleSystem);
 
-      setTimeout(function () {
-          $(".btn1").addClass("move-up")
-      },570);
+            this.time = 0.0;
+            var triangles = 1;
+            var instances = 7000;
+            var geometry = new THREE.InstancedBufferGeometry();
 
-      setTimeout(function () {
-          $(".btn2").addClass("move-up")
-      },770);
+            var vertices = new THREE.BufferAttribute(new Float32Array(triangles * 3 * 3), 3);
+            var unit = 0.055;
+            vertices.setXYZ(0, unit, -unit, 0);
+            vertices.setXYZ(1, -unit, unit, 0);
+            vertices.setXYZ(2, 0, 0, unit);
+            geometry.addAttribute('position', vertices);
 
-     $(".bg-img").addClass("bg-animation")
-  });
-  $(".menu-trigger").click(function () {
-      $(".nav3").css({
-          width: "300px",
-          opacity: "1"
-      });
+            var offsets = new THREE.InstancedBufferAttribute(new Float32Array(instances * 3), 3, 1);
+            var dist = 180;
+            for (var i = 0, ul = offsets.count; i < ul; i++) {
+                offsets.setXYZ(i, (Math.random() - 0.5) * dist, (Math.random() - 0.5) * dist, (Math.random() - 0.5) * dist);
+            }
+            geometry.addAttribute('offset', offsets);
 
-      $(".menu-trigger").css({
-          opacity: "0"
-      })
-  });
+            var colors = new THREE.InstancedBufferAttribute(new Float32Array(instances * 4), 4, 1);
 
-  $(".x").click(function () {
-      $(".nav3").css({
-          width: "0px",
-          opacity: "0"
-      });
-      $(".menu-trigger").css({
-          opacity: "1"
-      })
-  });
+            var threeColor = new THREE.Color();
+            for (var i = 0, ul = colors.count; i < ul; i++) {
+                var c = threeColor.setHex(WHITE.mainColor);
+                colors.setXYZW(i, c.r, c.g, c.b, 1);
+            }
+            geometry.addAttribute('color', colors);
 
-  $(window).on("load", function () {
+            var timeOffsets = new THREE.InstancedBufferAttribute(new Float32Array(instances * 1), 1, 1);
 
-     $(window).on("scroll", function() {
-          if($(document).scrollTop() > 10){
-            $(".nav-logo").css({
-                opacity: "1"
-            })
-          } else {
-              $(".nav-logo").css({
-                  opacity: "0"
-              })
-          }
-      });
+            for (var i = 0, ul = timeOffsets.count; i < ul; i++) {
+                timeOffsets.setX(i, Math.random());
+            }
+            geometry.addAttribute('timeOffset', timeOffsets);
 
-  });
+            var vector = new THREE.Vector4();
+            var orientationsStart = new THREE.InstancedBufferAttribute(new Float32Array(instances * 4), 4, 1);
+            for (var i = 0, ul = orientationsStart.count; i < ul; i++) {
+                vector.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
+                vector.normalize();
+                orientationsStart.setXYZW(i, vector.x, vector.y, vector.z, vector.w);
+            }
+            geometry.addAttribute('orientationStart', orientationsStart);
 
+            var orientationsEnd = new THREE.InstancedBufferAttribute(new Float32Array(instances * 4), 4, 1);
+            for (var i = 0, ul = orientationsEnd.count; i < ul; i++) {
+                vector.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
+                vector.normalize();
+                orientationsEnd.setXYZW(i, vector.x, vector.y, vector.z, vector.w);
+            }
+            geometry.addAttribute('orientationEnd', orientationsEnd);
 
-  'use strict';
+            var material = new THREE.RawShaderMaterial({
+                uniforms: {
+                    time: { value: 1.0 },
+                    sineTime: { value: 1.0 }
+                },
+                vertexShader: '\n        precision highp float;\n        uniform float time;\n        uniform mat4 modelViewMatrix;\n        uniform mat4 projectionMatrix;\n        attribute vec3 position;\n        attribute vec3 offset;\n        attribute vec4 color;\n        attribute vec4 orientationStart;\n        attribute vec4 orientationEnd;\n        attribute float timeOffset;\n        varying vec4 vColor;\n        varying float lifeProgress;\n\n        void main(){\n\n          vec3 vPosition = offset;\n\n          lifeProgress = mod(time+timeOffset,1.0);\n\n          vPosition = offset * lifeProgress + position;\n          vec4 orientation = normalize(mix(orientationStart, orientationEnd, lifeProgress));\n          vec3 vcV = cross(orientation.xyz, vPosition);\n          //orientation.w *= time*5.0;\n          vPosition = vcV * (2.0 * orientation.w) + (cross(orientation.xyz, vcV) * 2.0 + vPosition);\n          vColor = color;\n          gl_Position = projectionMatrix * modelViewMatrix * vec4( vPosition, 1.0 );\n        }\n        ',
+                fragmentShader: '\n      precision highp float;\n      uniform float time;\n      varying vec4 vColor;\n      varying float lifeProgress;\n\n      void main() {\n        float depth = gl_FragCoord.z / gl_FragCoord.w / 5.0;\n        float opacity = clamp(0.2, 1.0, depth);\n        vec4 color = vColor;\n        color.a = sin(lifeProgress*100.0)*opacity;\n        gl_FragColor = color;\n      }\n      ',
+                side: THREE.DoubleSide,
+                transparent: true
+            });
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+            var mesh = new THREE.Mesh(geometry, material);
+            mesh.frustumCulled = false;
+            this.mesh = mesh;
+        }
 
-  var WHITE = {
-      mainColor: 0x229922,
-      mainEmissive: 0,
-      secondaryColor: 0xffffff,
-      secondaryEmissive: 0,
-      detailColor: 0xfc5931,
-      detailEmissive: 0
-  };
+        ParticleSystem.prototype.update = function update(dt) {
+            this.time += 0.0001;
+            this.mesh.material.uniforms.time.value = Math.sin(this.time);
+        };
 
-  var ParticleSystem = function () {
-      function ParticleSystem() {
-          _classCallCheck(this, ParticleSystem);
+        return ParticleSystem;
+    }();
 
-          this.time = 0.0;
-          var triangles = 1;
-          var instances = 7000;
-          var geometry = new THREE.InstancedBufferGeometry();
+    /// INIT
 
-          var vertices = new THREE.BufferAttribute(new Float32Array(triangles * 3 * 3), 3);
-          var unit = 0.055;
-          vertices.setXYZ(0, unit, -unit, 0);
-          vertices.setXYZ(1, -unit, unit, 0);
-          vertices.setXYZ(2, 0, 0, unit);
-          geometry.addAttribute('position', vertices);
+    var HEIGHT = window.innerHeight;
+    var WIDTH = window.innerWidth;
 
-          var offsets = new THREE.InstancedBufferAttribute(new Float32Array(instances * 3), 3, 1);
-          var dist = 180;
-          for (var i = 0, ul = offsets.count; i < ul; i++) {
-              offsets.setXYZ(i, (Math.random() - 0.5) * dist, (Math.random() - 0.5) * dist, (Math.random() - 0.5) * dist);
-          }
-          geometry.addAttribute('offset', offsets);
+    // Create the scene
+    var scene = new THREE.Scene();
 
-          var colors = new THREE.InstancedBufferAttribute(new Float32Array(instances * 4), 4, 1);
+    scene.fog = new THREE.Fog(0x2e2e2e, 2, 10);
 
-          var threeColor = new THREE.Color();
-          for (var i = 0, ul = colors.count; i < ul; i++) {
-              var c = threeColor.setHex(WHITE.mainColor);
-              colors.setXYZW(i, c.r, c.g, c.b, 1);
-          }
-          geometry.addAttribute('color', colors);
+    // Create the camera
+    var aspectRatio = WIDTH / HEIGHT;
+    var fieldOfView = 60;
+    var nearPlane = 0.1;
+    var farPlane = 30;
+    var camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
 
-          var timeOffsets = new THREE.InstancedBufferAttribute(new Float32Array(instances * 1), 1, 1);
+    // Create the renderer
+    var renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true
+    });
 
-          for (var i = 0, ul = timeOffsets.count; i < ul; i++) {
-              timeOffsets.setX(i, Math.random());
-          }
-          geometry.addAttribute('timeOffset', timeOffsets);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0x151515, 1);
+    renderer.setSize(WIDTH, HEIGHT);
+    document.getElementById("background").appendChild(renderer.domElement);
 
-          var vector = new THREE.Vector4();
-          var orientationsStart = new THREE.InstancedBufferAttribute(new Float32Array(instances * 4), 4, 1);
-          for (var i = 0, ul = orientationsStart.count; i < ul; i++) {
-              vector.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
-              vector.normalize();
-              orientationsStart.setXYZW(i, vector.x, vector.y, vector.z, vector.w);
-          }
-          geometry.addAttribute('orientationStart', orientationsStart);
-
-          var orientationsEnd = new THREE.InstancedBufferAttribute(new Float32Array(instances * 4), 4, 1);
-          for (var i = 0, ul = orientationsEnd.count; i < ul; i++) {
-              vector.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
-              vector.normalize();
-              orientationsEnd.setXYZW(i, vector.x, vector.y, vector.z, vector.w);
-          }
-          geometry.addAttribute('orientationEnd', orientationsEnd);
-
-          var material = new THREE.RawShaderMaterial({
-              uniforms: {
-                  time: { value: 1.0 },
-                  sineTime: { value: 1.0 }
-              },
-              vertexShader: '\n        precision highp float;\n        uniform float time;\n        uniform mat4 modelViewMatrix;\n        uniform mat4 projectionMatrix;\n        attribute vec3 position;\n        attribute vec3 offset;\n        attribute vec4 color;\n        attribute vec4 orientationStart;\n        attribute vec4 orientationEnd;\n        attribute float timeOffset;\n        varying vec4 vColor;\n        varying float lifeProgress;\n\n        void main(){\n\n          vec3 vPosition = offset;\n\n          lifeProgress = mod(time+timeOffset,1.0);\n\n          vPosition = offset * lifeProgress + position;\n          vec4 orientation = normalize(mix(orientationStart, orientationEnd, lifeProgress));\n          vec3 vcV = cross(orientation.xyz, vPosition);\n          //orientation.w *= time*5.0;\n          vPosition = vcV * (2.0 * orientation.w) + (cross(orientation.xyz, vcV) * 2.0 + vPosition);\n          vColor = color;\n          gl_Position = projectionMatrix * modelViewMatrix * vec4( vPosition, 1.0 );\n        }\n        ',
-              fragmentShader: '\n      precision highp float;\n      uniform float time;\n      varying vec4 vColor;\n      varying float lifeProgress;\n\n      void main() {\n        float depth = gl_FragCoord.z / gl_FragCoord.w / 5.0;\n        float opacity = clamp(0.2, 1.0, depth);\n        vec4 color = vColor;\n        color.a = sin(lifeProgress*100.0)*opacity;\n        gl_FragColor = color;\n      }\n      ',
-              side: THREE.DoubleSide,
-              transparent: true
-          });
-
-          var mesh = new THREE.Mesh(geometry, material);
-          mesh.frustumCulled = false;
-          this.mesh = mesh;
-      }
-
-      ParticleSystem.prototype.update = function update(dt) {
-          this.time += 0.0001;
-          this.mesh.material.uniforms.time.value = Math.sin(this.time);
-      };
-
-      return ParticleSystem;
-  }();
-
-  /// INIT
-
-  var HEIGHT = window.innerHeight;
-  var WIDTH = window.innerWidth;
-
-  // Create the scene
-  var scene = new THREE.Scene();
-
-  scene.fog = new THREE.Fog(0x2e2e2e, 2, 10);
-
-  // Create the camera
-  var aspectRatio = WIDTH / HEIGHT;
-  var fieldOfView = 60;
-  var nearPlane = 0.1;
-  var farPlane = 30;
-  var camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
-
-  // Create the renderer
-  var renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true
-  });
-
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setClearColor(0x151515, 1);
-  renderer.setSize(WIDTH, HEIGHT);
-  document.getElementById("background").appendChild(renderer.domElement);
-
-  var ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
-  scene.add(ambientLight);
+    var ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+    scene.add(ambientLight);
 
 
-  function handleWindowResize() {
-      // update height and width of the renderer and the camera
-      HEIGHT = window.innerHeight;
-      WIDTH = window.innerWidth;
-      renderer.setSize(WIDTH, HEIGHT);
-      camera.aspect = WIDTH / HEIGHT;
-      camera.updateProjectionMatrix();
-  }
+    function handleWindowResize() {
+        // update height and width of the renderer and the camera
+        HEIGHT = window.innerHeight;
+        WIDTH = window.innerWidth;
+        renderer.setSize(WIDTH, HEIGHT);
+        camera.aspect = WIDTH / HEIGHT;
+        camera.updateProjectionMatrix();
+    }
 
-  var render = function render() {
-      var delta = clock.getDelta();
-      var elapsed = clock.getElapsedTime();
-      particles.update(delta);
-      renderer.render(scene, camera);
-      window.requestAnimationFrame(render);
-  };
+    var render = function render() {
+        var delta = clock.getDelta();
+        var elapsed = clock.getElapsedTime();
+        particles.update(delta);
+        renderer.render(scene, camera);
+        window.requestAnimationFrame(render);
+    };
 
-  //////////
-  // INIT
-  //////////
-  window.addEventListener('resize', handleWindowResize, false);
+    //////////
+    // INIT
+    //////////
+    window.addEventListener('resize', handleWindowResize, false);
 
-  //set camera at eyes height
-  camera.position.y = 1.7;
-  camera.position.z = 0.5;
+    //set camera at eyes height
+    camera.position.y = 1.7;
+    camera.position.z = 0.5;
 
-  // create particles
-  var particles = new ParticleSystem();
-  particles.mesh.position.y = 4;
-  scene.add(particles.mesh);
+    // create particles
+    var particles = new ParticleSystem();
+    particles.mesh.position.y = 4;
+    scene.add(particles.mesh);
 
-  // start render
-  var clock = new THREE.Clock();
-  render();
-
-
-
-
-
-
-
+    // start render
+    var clock = new THREE.Clock();
+    render();
 </script>
 
