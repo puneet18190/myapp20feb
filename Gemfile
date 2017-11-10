@@ -35,6 +35,7 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 
 
+gem 'aws-sdk'
 gem 'dropzonejs-rails'
 # video player
 gem 'videojs_rails'
