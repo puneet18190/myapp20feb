@@ -183,6 +183,8 @@ html,body {
   font-family: "Open Sans",sans-serif;
   text-transform: uppercase;
   color: black;
+  letter-spacing: .45px;
+
 
 }
 
@@ -253,7 +255,7 @@ html,body {
   bottom: 100px;
   width: 80%;
   height: 200px;
-  background: white;
+  background: rgba(40,40,90,0.7);
   display: block;
   margin:  0 auto;
   left: 0;
@@ -280,7 +282,7 @@ html,body {
 .box h1 {
   font-family: "Helvetica Neue", sans-serif;
   text-transform: uppercase;
-  color: black;
+  color: white;
   font-weight: 500;
   font-size: 20px;
   margin-top: 50px;
@@ -308,12 +310,16 @@ html,body {
 }
 
 .panel-message h1 {
-  background: white;
-  color: black;
-  width: 500px;
+  background: #4d7e15;
+  color: white;
+  width: 800px;
+  height: 90px;
+  font-family: "Open Sans",sans-serif;
+  text-transform: uppercase;
   box-shadow: 0 2px 5px 1px rgba(5, 5, 5, 0.4);
   display: block;
   margin: 0 auto;
+
   padding-bottom: 20px;
   padding-top: 20px;
   border-radius: .1em;
