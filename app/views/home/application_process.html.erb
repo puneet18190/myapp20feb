@@ -360,6 +360,64 @@
 <script>
 
 
+  $(window).on("scroll", function(){
+      if(window.scrollY >= $(".panel1").offset().top){
+          $(".bubble").css({
+              background: "none"
+          });
+          $(".bubble1").css({
+              background: "white"
+          })
+      }
+      if(window.scrollY >= $(".panel22").offset().top){
+          $(".bubble").css({
+              background: "none"
+          });
+          $(".bubble2").css({
+              background: "white"
+          })
+      }
+
+      if(window.scrollY >= $(".panel3").offset().top){
+          $(".bubble").css({
+              background: "none"
+          });
+          $(".bubble3").css({
+              background: "white"
+          })
+      }
+
+
+      if(window.scrollY >= $(".panel4").offset().top){
+          $(".bubble").css({
+              background: "none"
+          });
+          $(".bubble4").css({
+              background: "white"
+          })
+      }
+
+
+      if(window.scrollY >= $(".panel5").offset().top){
+          $(".bubble").css({
+              background: "none"
+          });
+          $(".bubble5").css({
+              background: "white"
+          })
+      }
+
+      if(window.scrollY >= $(".panel6").offset().top){
+          $(".bubble").css({
+              background: "none"
+          });
+          $(".bubble6").css({
+              background: "white"
+          })
+      }
+  });
+
+
 
     $(".cube1, .bubble1").click(function(){
         $('html,body').animate({scrollTop: $(".panel1").offset().top});
