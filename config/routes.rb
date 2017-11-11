@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get '/application_process' => 'home#application_process'
 
+  get '/about' => 'home#about'
+
 
   resources 'contacts', only: [:new, :create], path_names: { new: '' }
   if Rails.env.development?
