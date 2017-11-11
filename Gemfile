@@ -37,6 +37,8 @@ gem 'devise'
 
 gem 'aws-sdk'
 
+gem 'will_paginate'
+
 gem 'dropzonejs-rails'
 # video player
 gem 'videojs_rails'

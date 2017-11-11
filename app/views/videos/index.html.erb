@@ -1,25 +1,70 @@
+<style>
+  h1 {
+    text-align:center;
+    font-family:"Helvetica Neue",sans-serif;
+    margin-top: 100px;
+  }
+
+    a {
+      color:black !important;
+    }
+
+    .video-js {
+      margin-top: 50px;
+    }
+
+    .pagination {
+      margin-top: 30px;
+      display: block;
+      text-align:center;
+
+    }
+
+    .pagination a{
+      font-size: 25px;
+
+    }
+
+    .edit-video-btn {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      width: 250px;
+      height: 50px;
+      box-shadow: 0 2px 5px 1px rgba(5, 5, 5, 0.4);
+      font-size: 20px;
+      cursor: pointer;
+      background: #fc5931;
+      color:white;
+      border:none;
+    }
+</style>
+
+<%= render 'partials/nav' %>
+<%= render 'partials/show_logo' %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Videos</h1>
+<h1>All Videos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="videos">
+  <% @videos.each do |video| %>
+    <video  id="my_video_1" class="video-js vjs-default-skin" width="100%" height="350px"
+            preload="auto"
+            data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2, 2.5, 3.0], "controls":"true" }'
+    >
+      <source src="<%= video.mp4.url %>" type='video/mp4'>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </video>
 
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <button onclick="window.location.href='/videos/<%= video.id %>/edit'" class="edit-video-btn">Edit Video Details</button>
+  <% end %>
+</div>
 
-<br>
+<%= javascript_include_tag 'nav' %>
+<%= render 'partials/footer' %>
 
-<%= link_to 'New Video', new_video_path %>
+<%= will_paginate @videos %>
