@@ -3,6 +3,21 @@
 <%= stylesheet_link_tag 'contact' %>
 <%= render 'partials/show_logo' %>
 
+<style>
+  .alert {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background:red;
+    z-index: 999999999999999999999;
+  }
+</style>
+
+<% if flash[:error] -%>
+    <div class = "alert alert-success"><%= flash[:error] %></div>
+<% end %>
+
+
 <div class="bg">
 
   <%= render 'partials/nav' %>
@@ -14,7 +29,28 @@
         <h1 class="start" style="text-transform: uppercase; font-family: 'Open Sans', sans-serif; font-size: 20px;">Create your account to apply with <span style="font-weight: 900">Vanmar lending</span></h1>
       </div>
       <div>
-        <form class="form-signin" action="" method="post" name="form">
+        <%= form_for @contact, class:"form-signin" do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-styling", name:"username", required: true %>
+
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-styling", name:"username", required: true %>
+
+          <%= f.label :number %>
+          <%= f.text_field :number, class: "form-styling", name:"username", required: true %>
+
+          <%= f.label :comment %>
+          <%= f.text_area :comment, class: "form-styling", name:"username", required: true %>
+
+            <div class="hidden">
+              <%= f.label :nickname %>
+              <%= f.text_field :nickname, hint: 'leave this field blank' %>
+            </div>
+
+            <%= f.submit 'Send Message' %>
+
+
+            <!--
           <label for="username">Name</label>
           <input class="form-styling" type="text" name="username" placeholder=""/>
 
@@ -23,10 +59,17 @@
 
           <label for="password">Phone Number</label>
           <input class="form-styling" type="text" name="password" placeholder=""/>
+
+          <label for="password">Comment</label>
+          <input class="form-styling comment" type="text" name="password" placeholder=""/>
+
+
           <div class="btn-animate">
             <a class="btn-signin">Contact</a>
           </div>
-        </form>
+
+          -->
+        <% end %>
 
         <div  class="success">
           <svg width="270" height="270" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

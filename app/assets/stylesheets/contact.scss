@@ -39,7 +39,7 @@ html, body {
 
 .form {
   width: 400px;
-  height: 80%;
+  height: 90% !important;
   background: rgba(255,255,255,0.3);
   margin-right: 150px;
   margin-top: 70px;
@@ -82,6 +82,10 @@ html, body {
   color: white;
 }
 
+.comment {
+  height: 100px !important;
+}
+
 
 
 
@@ -95,7 +99,7 @@ html, body * { box-sizing: border-box; }
 }
 
 .frame {
-  height: 82vh;
+  height: 107vh;
   width: 430px;
   margin-bottom: 30px;
   background:

@@ -39,6 +39,8 @@ gem 'aws-sdk'
 
 gem 'will_paginate'
 
+gem 'mail_form'
+
 gem 'dropzonejs-rails'
 # video player
 gem 'videojs_rails'

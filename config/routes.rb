@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   get '/application_process' => 'home#application_process'
 
+
+  resources :contacts , only: [:new, :create]
+
 end
