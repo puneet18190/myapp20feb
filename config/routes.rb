@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+
+  get 'contacts/create'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :videos
@@ -20,6 +24,10 @@ Rails.application.routes.draw do
   get '/application_process' => 'home#application_process'
 
 
-  resources :contacts , only: [:new, :create]
+  resources 'contacts', only: [:new, :create], path_names: { new: '' }
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 
 end
