@@ -40,9 +40,7 @@ gem 'aws-sdk'
 gem 'will_paginate'
 
 gem 'mail_form'
-group :development do
-  gem 'letter_opener_web'
-end
+gem 'letter_opener_web'
 
 gem 'dropzonejs-rails'
 # video player

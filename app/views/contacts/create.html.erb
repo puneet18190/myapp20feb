@@ -1,1 +1,37 @@
-<h1>tghank you </h1>
+
+<style>
+  .h1 {
+    font-size: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: block;
+    color:rgb(61,61,61);
+    font-family: "Open Sans", sans-serif;
+    text-align:center;
+    display: block;
+    margin-top: 10px;
+
+  }
+
+  .green {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+
+    .footer h1 {
+      color:black !important;
+    }
+</style>
+
+<%= render 'partials/nav' %>
+<%= render 'partials/show_logo' %>
+
+<img class="green" src="../green.png"/>
+
+  <h1 class="h1">Thank You for Your Message <br/> We Will Be In Touch!</h1>
+
+<%= render 'partials/footer' %>
+<%= javascript_include_tag 'nav' %>

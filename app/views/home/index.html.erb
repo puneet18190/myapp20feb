@@ -137,13 +137,13 @@
       <p>Fax: 760-200-0046</p>
     </div>
     <div class="right-footer-side">
-      <form>
-        <input type="text" placeholder="Name"/>
-        <input type="text" placeholder="Email"/>
-        <input type="text" placeholder="Phone"/>
-        <textarea type="text" placeholder="Comment"></textarea>
-        <button>Submit</button>
-      </form>
+      <%= simple_form_for @contact, url: new_contact_path do |f| %>
+          <%= f.text_field :name, required: true, class: 'form-styling', placeholder: "Name" %>
+          <%= f.text_field :number, required: true, class: 'form-styling', placeholder: "Phone Number" %>
+          <%= f.text_field :email, required: true, class: 'form-styling', placeholder: "Email" %>
+          <%= f.text_area :message, required: true, class: 'form-styling textarea', placeholder: "Message" %>
+          <%= f.button :submit, 'Send message', class: "send-msg" %>
+      <% end %>
     </div>
   </div>
 </div>
