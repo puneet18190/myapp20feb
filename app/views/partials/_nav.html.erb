@@ -1,4 +1,8 @@
 <style>
+  a {
+    text-decoration: none;
+    color:white;
+  }
 </style>
 
 <a class='menu-trigger'>
@@ -19,6 +23,12 @@
 
       <li style="cursor: pointer;" onclick="window.location.href='/team'">Our Team</li>
       <li style="cursor: pointer;" onclick="window.location.href='/contact'">Contact Us</li>
+
+
+      <% if current_user %>
+          <li style="cursor: pointer;" onclick="window.location.href='/admin'">Admin</li>
+          <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+      <% end %>
 
     </ul>
   </div>

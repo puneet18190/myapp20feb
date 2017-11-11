@@ -1,18 +1,35 @@
+<%= stylesheet_link_tag 'admin' %>
 
-<h1>Customize Video Details</h1>
+<%= render 'partials/nav' %>
+
+<%= render 'partials/show_logo' %>
+
+
+
+<h1 style="text-align: center; font-family: Helvetica, sans-serif; margin-top: 100px;">Customize The Video</h1>
 
 <%= simple_form_for(@video,html:{multipart:true}) do |f| %>
     <%= f.error_notification %>
 
-    <%= f.input :name %>
+    <%= f.text_field :name, placeholder: "(Optional) Title Of Video" %>
 
-    Description <%= f.text_area :description, :maxlength => 350 %>
+    <%= f.text_area :description, :maxlength => 350, placeholder: "(Optional) Give A Description" %>
 
 
 
 
     <div class = "submit ">
-      <%= f.button :submit, class:'submit-btn btn ' %>
+      <%= f.button :submit, class:'submit-btn btn edit-btn ' %>
     </div>
 
 <% end %>
+
+
+
+<%= render 'partials/footer' %>
+
+<%= javascript_include_tag 'nav' %>
+
+<script>
+  $(".edit-btn").val("Submit")
+</script>

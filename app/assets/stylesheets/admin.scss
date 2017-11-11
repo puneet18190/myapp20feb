@@ -3,9 +3,109 @@
 }
 
 button {
-  margin-top: 100px;
-  margin-left: 100px;
-  font-size: 30px;
+  display: block;
+  margin: 0 auto;
+  transform: translateY(200px);
+  width: 450px;
+  height: 70px;
+  background: #fc5931;
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
   border:none;
+  color:white;
+  font-size: 22px;
+  border-radius: .3em;
   cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+
+.dz-message h3, .dz-message strong {
+  font-family:"Helvetica Neue", Sans-Serif;
+}
+
+.submit-btn {
+  font-size:24px;
+  color:white;
+  background:#fc5931;
+  border:none;
+  display: block;
+  margin: 0 auto;
+  min-width: 200px;
+  width: auto;
+  height: 50px;
+  border-radius: .2em;
+  cursor: pointer;
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.2);
+
+}
+
+#my-dropzone {
+  border:none !important;
+}
+
+.dz-remove {
+  font-family:"Helvetica Neue", sans-serif;
+  color:black;
+  text-decoration: none;
+  margin-top: 5px;
+
+}
+
+.dz-file-preview {
+
+}
+
+.dz-details {
+  background:#4d7e15 !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: .3em;
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
+
+}
+
+input, textarea {
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  width: 400px;
+  border-radius: .2em;
+  background: none;
+  color:black;
+  padding-left: 20px;
+  font-size:20px;
+  font-family: "Helvetica Neue",sans-serif;
+  margin-top: 60px;
+  height: 70px;
+  background: rgba(245,245,245,1);
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.2);
+  border:none;
+
+}
+
+::-webkit-input-placeholder {
+  font-size: 20px;
+  color:black;
+
+}
+
+textarea  {
+  width: 400px;
+  height: 200px;
+  margin-top: 60px;
+  color:black;
+  font-size: 20px;
+
+  border:none;
+  background: rgba(245,245,245,1);
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.2);
+
+
+}
+
+.edit-btn {
+  margin-top: 30px;
 }

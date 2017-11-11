@@ -3,7 +3,7 @@ class AdminController < ApplicationController
     if current_user
 
     else
-      redirect_to '/'
+      redirect_to '/users/sign_up'
     end
   end
 end
