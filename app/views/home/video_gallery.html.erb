@@ -116,11 +116,6 @@
     .menu-trigger {
     }
 
-    .video {
-      width: 100%!important;
-      height: 300px !important;
-    }
-
 </style>
 
 <%= render 'partials/nav' %>
@@ -139,8 +134,15 @@
               <p style="color:white;"><%= video.description %></p>
             </div>
             <div class="video-div-container video-div-container2">
-              <video class="video" width="100%" height="300" controls>
-                <source src="<%= video.mp4 %>" type="video/mp4">
+              <video  id="my_video_1" class="video-js vjs-default-skin" width="100%" height="350px"
+                      preload="auto"
+                      data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2, 2.5, 3.0], "controls":"true" }'
+              >
+                <source src="<%= video.mp4.url %>" type='video/mp4'>
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
               </video>
             </div>
           </div>
