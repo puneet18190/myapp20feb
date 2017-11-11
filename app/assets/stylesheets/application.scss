@@ -292,3 +292,7 @@ a.menu-trigger.active span:after {
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 }
+
+.footer2 h1 {
+  pointer-events: none !important;
+}
