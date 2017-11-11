@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get '/video_gallery' => 'home#video_gallery'
 
+  get '/application_process' => 'home#application_process'
+
 end

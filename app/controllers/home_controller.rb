@@ -14,4 +14,8 @@ class HomeController < ApplicationController
   def video_gallery
     @videos = Video.all
   end
+
+  def application_process
+
+  end
 end
