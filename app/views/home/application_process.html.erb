@@ -137,37 +137,78 @@
     .footer2 {
       height: 160% !important;
     }
+
+    .box2 {
+      cursor: pointer;
+      transition: all 400ms ease-in-out;
+    }
+
+    .box2:hover {
+      background: #fc5931;
+      transform: scale(1.2);
+    }
+
+    .bubbles {
+      position: fixed;
+      right: 30px;
+      top: 240px;
+      z-index: 99999999999999;
+    }
+
+    .bubble {
+      width: 15px;
+      height: 15px;
+      background: none;
+      border: 5px solid rgba(255,255,255,0.5);
+      display: block;
+      border-radius: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 </style>
 
+
+<div class="bubbles">
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+  <div class="bubble bubble4"></div>
+  <div class="bubble bubble5"></div>
+  <div class="bubble bubble6"></div>
+
+</div>
+
 <div class="bg">
+
+
   <h1>Process Of Mortgage</h1>
   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-  <div class="box2">
+  <div class="box2 cube1">
     <div class="box-text" style="position: absolute;">
       <h4><span style="font-size:40px;">01</span> <br/> Documentation</h4>
     </div>
   </div>
-  <div class="box2">
+  <div class="box2 cube2">
     <div class="box-text" style="position: absolute;">
       <h4><span style="font-size:40px;">02</span> <br/> Documentation</h4>
     </div>
   </div>
-  <div class="box2">
+  <div class="box2 cube3">
     <div class="box-text" style="position: absolute;">
       <h4><span style="font-size:40px;">03</span> <br/> Documentation</h4>
     </div>
   </div>
-  <div class="box2">
+  <div class="box2 cube4">
     <div class="box-text" style="position: absolute;">
       <h4><span style="font-size:40px;">04</span> <br/> Documentation</h4>
     </div>
   </div>
-  <div class="box2">
+  <div class="box2 cube5">
     <div class="box-text" style="position: absolute;">
     <h4><span style="font-size:40px;">05</span> <br/> Documentation</h4>
   </div>
   </div>
-  <div class="box2">
+  <div class="box2 cube6">
     <div class="box-text" style="position: absolute;">
     <h4><span style="font-size:40px;">06</span> <br/> Documentation</h4>
   </div>
@@ -175,7 +216,7 @@
 
 </div>
 
-<div style="background: url(../light-blue-bg.png) center center no-repeat; background-size: 200% 200%;" class="second-panel first-panel">
+<div style="background: url(../light-blue-bg.png) center center no-repeat; background-size: 200% 200%;" class="second-panel first-panel panel1">
 
 
   <div class="documentation">
@@ -192,7 +233,7 @@
   </div>
 </div>
 
-<div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel">
+<div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel panel22">
   <div class="documentation">
     <div style="background: #3367d6 " class="number">
       <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 02 </span> <br/> Lorem</h1>
@@ -209,7 +250,7 @@
 </div>
 
 
-<div style="background: url(../light-blue-bg.png) center center no-repeat; background-size: 200% 200%;" class="second-panel first-panel">
+<div style="background: url(../light-blue-bg.png) center center no-repeat; background-size: 200% 200%;" class="second-panel first-panel panel3">
 
 
   <div class="documentation">
@@ -226,7 +267,7 @@
   </div>
 </div>
 
-<div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel">
+<div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel panel4">
   <div class="documentation">
     <div style="background: #3367d6 " class="number">
       <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 04 </span> <br/> Lorem</h1>
@@ -243,7 +284,7 @@
 </div>
 
 
-<div style="background: url(../light-blue-bg.png) center center no-repeat; background-size: 200% 200%;" class="second-panel first-panel">
+<div style="background: url(../light-blue-bg.png) center center no-repeat; background-size: 200% 200%;" class="second-panel first-panel panel5">
 
 
   <div class="documentation">
@@ -260,7 +301,7 @@
   </div>
 </div>
 
-<div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel">
+<div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel panel6">
   <div class="documentation">
     <div style="background: #3367d6 " class="number">
       <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 06 </span> <br/> Lorem</h1>
@@ -314,3 +355,72 @@
 
 <%= render 'partials/footer' %>
 <%= javascript_include_tag 'nav' %>
+
+
+<script>
+
+
+
+    $(".cube1, .bubble1").click(function(){
+        $('html,body').animate({scrollTop: $(".panel1").offset().top});
+        $(".bubble").css({
+            background: "none"
+        });
+        $(".bubble1").css({
+            background: "white"
+        })
+
+    });
+
+    $(".cube2, .bubble2").click(function(){
+        $('html,body').animate({scrollTop: $(".panel22").offset().top});
+        $(".bubble").css({
+            background: "none"
+        });
+        $(".bubble2").css({
+            background: "white"
+        })
+    });
+
+    $(".cube3, .bubble3").click(function(){
+        $('html,body').animate({scrollTop: $(".panel3").offset().top});
+        $(".bubble").css({
+            background: "none"
+        });
+        $(".bubble3").css({
+            background: "white"
+        })
+    });
+
+    $(".cube4, .bubble4").click(function(){
+        $('html,body').animate({scrollTop: $(".panel4").offset().top});
+        $(".bubble").css({
+            background: "none"
+        });
+        $(".bubble4").css({
+            background: "white"
+        })
+    });
+
+    $(".cube5, .bubble5").click(function(){
+        $('html,body').animate({scrollTop: $(".panel5").offset().top});
+        $(".bubble").css({
+            background: "none"
+        });
+        $(".bubble5").css({
+            background: "white"
+        })
+    });
+
+
+    $(".cube6, .bubble6").click(function(){
+        $('html,body').animate({scrollTop: $(".panel6").offset().top});
+        $(".bubble").css({
+            background: "none"
+        });
+        $(".bubble6").css({
+            background: "white"
+        })
+    });
+
+</script>
