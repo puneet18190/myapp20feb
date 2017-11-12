@@ -25,7 +25,7 @@
     .documentation p {
       margin-left: 200px;
       color:white;
-      font-size:18px;
+      font-size:14px;
       font-family: "Helvetica Neue",sans-serif;
       line-height: 28px;
       margin-top: -10px;
@@ -46,7 +46,8 @@
 
     .bg {
       width: 100%;
-      height: 100%;
+      height:auto;
+      min-height: 105%;
       background:url(top-view-bg.png) center center no-repeat;
       background-size:cover;
       text-align:center;
@@ -91,12 +92,21 @@
 
     }
 
-
+  @media only screen and (max-width: 600px) {
+    .btn-buy {
+      margin-top: -60px !important;
+    }
+  }
 
   @media only screen and (max-width: 1000px) {
     .box2 {
       margin: 0 !important;
 
+    }
+
+    .btn-buy {
+      margin-top: 50px !important;
+      margin-bottom: 40px !important;
     }
 
     .bg p {
@@ -126,13 +136,18 @@
       height: auto !important;
     }
 
+    .panel22 {
+      height: 120% !important;
+    }
+
     .documentation p {
       text-align:center !important;
       margin: 0 !important;
       margin-left: 20px !important;
       margin-right: 20px !important;
-      transform: translateY(30px) !important;
-      margin-bottom: 30px !important;
+      transform: translateY(10px) !important;
+      margin-bottom: 0px !important;
+      font-size:11px !important;
     }
 
   }
@@ -169,6 +184,27 @@
       margin-top: 10px;
       cursor: pointer;
     }
+
+    .btn-buy {
+      display: inline-block;
+      margin: 0 auto;
+      width: 250px;
+      height: 50px;
+      border: none;
+      color: white;
+      background: #4d7e15;
+      font-family:"Helvetica Neue",sans-serif;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-left: 10px;
+      cursor: pointer;
+
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,1);
+      transition: all 400ms ease-in-out;
+      animation-delay: 300ms;
+    }
 </style>
 
 
@@ -186,7 +222,11 @@
 
 
   <h1>Process Of Mortgage</h1>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+  <p>Our job is to make the mortgage process as seamless as possible for you and your family. Thankfully, we are experts at that. The loan process is broken up into 6 parts: The Documentation Stage, The Appraisal Stage, The Underwriting Stage, The Conditional Approval Stage, The Clear-To-Close Stage, and finally the Closing Stage. We will thoroughly go through each stage with you, but in the mean-time, feel free to browse each stage below to get a general knowledge of what is going on.</p>
+
+  <button onclick="window.location.href='/buy'" class="btn-buy">Buy A Home</button>
+  <button onclick="window.location.href='/refinance'" style="background: #ff5734 !important;" class="btn-buy">Refinance</button><br/>
+
   <div class="box2 cube1">
     <div class="box-text" style="position: absolute;">
       <h4><span style="font-size:40px;">01</span> <br/> Documentation</h4>
@@ -194,27 +234,27 @@
   </div>
   <div class="box2 cube2">
     <div class="box-text" style="position: absolute;">
-      <h4><span style="font-size:40px;">02</span> <br/> Documentation</h4>
+      <h4><span style="font-size:40px;">02</span> <br/> Appraisal</h4>
     </div>
   </div>
   <div class="box2 cube3">
     <div class="box-text" style="position: absolute;">
-      <h4><span style="font-size:40px;">03</span> <br/> Documentation</h4>
+      <h4><span style="font-size:40px;">03</span> <br/> Underwriting</h4>
     </div>
   </div>
   <div class="box2 cube4">
     <div class="box-text" style="position: absolute;">
-      <h4><span style="font-size:40px;">04</span> <br/> Documentation</h4>
+      <h4><span style="font-size:40px;">04</span> <br/> Conditional Approval</h4>
     </div>
   </div>
   <div class="box2 cube5">
     <div class="box-text" style="position: absolute;">
-    <h4><span style="font-size:40px;">05</span> <br/> Documentation</h4>
+    <h4><span style="font-size:40px;">05</span> <br/> Clear To Close</h4>
   </div>
   </div>
   <div class="box2 cube6">
     <div class="box-text" style="position: absolute;">
-    <h4><span style="font-size:40px;">06</span> <br/> Documentation</h4>
+    <h4><span style="font-size:40px;">06</span> <br/> Closing</h4>
   </div>
   </div>
 
@@ -225,10 +265,28 @@
 
   <div class="documentation">
     <div class="number">
-      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 01 </span> <br/> Lorem</h1>
+      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 01 </span> <br/> Documentation</h1>
 
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>During The Documentation Stage you are the most important player on the team. As quarterback of the documentation stage, there are a few critical documents we will be asking you to hand off. These documents include:
+      <br/>
+      1. W2’s – From the last 2 years
+      <br/>
+
+      2. 1040 Federal Tax Returns – From the last 2 years
+      <br/>
+
+      3. 2 Most Recent Paystubs
+      <br/>
+
+      4. 2 Most Recent Bank Statements – All pages
+      <br/>
+
+      5. Copy of your drivers license</p>
+      <p>During this stage, it is critical that you don’t change any aspects of your financial picture. This means:
+      No Major Purchases (e.g. Purchasing urniture for you new home)
+      No Applying for New Credit (e.g. Obtaining financing for Car)
+      No Change in Employment (Please Don’t Quit Your Job!)</p>
   </div>
 
   <div class="panel light">
@@ -240,10 +298,32 @@
 <div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel panel22">
   <div class="documentation">
     <div style="background: #3367d6 " class="number">
-      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 02 </span> <br/> Lorem</h1>
+      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 02 </span> <br/> Appraisal</h1>
 
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>During The Appraisal Stage a licensed 3rd party Appraiser will estimate the value of the home you are about to purchase. This is meant to ensure for you, and your lender, that the home you are buying is worth the price that is being offered.
+      The most common method used by an Appraiser to determine your homes value is to compare it against recently sold homes in your neighborhood; typically over the last 6 months. Although the Appraiser will not account for the following when determining your home’s value:
+      <br/>
+      &bull; Roof
+      &bull; Appliances
+      <br/>
+
+      &bull; Air Conditioning
+      <br/>
+
+      &bull; Plumbing
+      <br/>
+
+      &bull; Foundation
+      <br/>
+
+      &bull; Windows
+      <br/>
+
+      &bull; Floors
+      <br/>
+
+      This is why we always recommend our clients obtain a Home Inspection in addition to their Apprasial. If you’d like the recommendation of a good Home Inspector, please let us know, we are happy to help!</p>
   </div>
 
 
@@ -259,10 +339,17 @@
 
   <div class="documentation">
     <div class="number">
-      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 03 </span> <br/> Lorem</h1>
+      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 03 </span> <br/> Underwriting</h1>
 
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>During The Underwriting Stage, our Loan Processor reviews all the submitted documentation that you’ve provided and then turns it over to our Underwriting Department. The Underwriter is responsible for performing three critical tasks:
+      <br/>
+      1. Organization – The Underwriter will compile and organize your documentation into a mortgage-ready file.
+      <br/>
+      2. Qualification – The Underwriter will reconstruct your scenario to ensure it meets our qualification requirements and guidelines.
+      <br/>
+      3. Verification –  The Underwriter will verify that all information is accurate and authentic.
+      It is not uncommon for Underwriters to request additional documentation, so please do not be alarmed or discouraged if this happens. Instead, be sure to accommodate these additional requests as quickly as possible.</p>
   </div>
 
   <div class="panel light">
@@ -274,10 +361,17 @@
 <div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel panel4">
   <div class="documentation">
     <div style="background: #3367d6 " class="number">
-      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 04 </span> <br/> Lorem</h1>
+      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 04 </span> <br/> Conditional Approval</h1>
 
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>This is an exciting step in the process! During The Conditional Approval Stage you receive the first indication that your mortgage loan will be approved by us, as it’s been initially reviewed by the Underwriter. Although, this approval is only valid if certain conditions requested from the our company are met. These conditions may include:
+      <br/>
+      1. Additional Documentation
+      <br/>
+      2. Letter of Explantation
+      <br/>
+      3. Acceptable Appraisal Report
+      Once you have met all the required conditions requested, your file will be re-submitted to your underwriter for final approval.</p>
   </div>
 
 
@@ -293,10 +387,10 @@
 
   <div class="documentation">
     <div class="number">
-      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 05 </span> <br/> Lorem</h1>
+      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 05 </span> <br/> Clear To Close</h1>
 
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>You’re almost there! During The Clear-To-Close Stage the Underwriter “double checks” that all documentation has been provided and all conditions have been met. We will prepare the final documentation that will need to be signed at closing and we will be reaching out to schedule a closing date.</p>
   </div>
 
   <div class="panel light">
@@ -308,10 +402,10 @@
 <div style="background: url(../green-bg.png) center center no-repeat; background-size: 200% 200%;"  class="second-panel panel6">
   <div class="documentation">
     <div style="background: #3367d6 " class="number">
-      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 06 </span> <br/> Lorem</h1>
+      <h1><span style="font-size: 70px; text-align:center; font-weight: 900 !important;"> 06 </span> <br/> Closing</h1>
 
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>Hooray! During The Closing Stage you will be signing the final documentation, signing your title documents, and receiving the keys to your new dream home! That wasn’t too hard, right!?</p>
   </div>
 
 
