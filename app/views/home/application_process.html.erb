@@ -333,25 +333,6 @@
       Iur team will find solutions tonyour lending needs no matter how unique your situation is.
     </p>
   </div>
-
-
-  <div style="margin-top: 400px;" class="both-footer">
-    <div class="left-footer-side">
-      <h3>Contact Us</h3>
-      <p>39249 Leopard St. Ste A <br/> Palm Desert, CA 92211</p>
-      <p>Phone: 760-200-4620</p>
-      <p>Fax: 760-200-0046</p>
-    </div>
-    <div class="right-footer-side">
-      <%= simple_form_for @contact, url: new_contact_path do |f| %>
-          <%= f.text_field :name, required: true, class: 'form-styling', placeholder: "Name" %>
-          <%= f.text_field :number, required: true, class: 'form-styling', placeholder: "Phone Number" %>
-          <%= f.text_field :email, required: true, class: 'form-styling', placeholder: "Email" %>
-          <%= f.text_area :message, required: true, class: 'form-styling textarea', placeholder: "Message" %>
-          <%= f.button :submit, 'Send message', class: "send-msg" %>
-      <% end %>
-    </div>
-  </div>
 </div>
 
 <%= render 'partials/show_logo' %>
