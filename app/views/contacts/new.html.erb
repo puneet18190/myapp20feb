@@ -1,96 +1,386 @@
-
+<link href="https://fonts.googleapis.com/css?family=Muli:900" rel="stylesheet">
 
 <style>
-  .textarea {
-    height: 100px !important;
-    font-size: 17px;
-    color:white !important;
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+    .side-div {
+      width: 60%;
+      min-height:120%;
+      height: auto;
+      background:url(https://images.pexels.com/photos/279607/pexels-photo-279607.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb) center center no-repeat;
+      background-size:cover;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      }
+
+    .side-div h1 {
+      font-family: 'Cardo', serif;
+      text-align: center;
+      font-size: 50px;
+      margin-left: 100px;
+      font-weight: 100;
+      margin-right: 100px;
+      position: absolute;
+      top:0;bottom:0;right:0;left:0;
+      top: 200px;
+      opacity: 0;
+      text-transform: uppercase;
+      transform: translateY(-40px);
+
+      color:black;
+    }
+
+    .move-h1-down {
+      animation: move-down 1s ease-in-out forwards 1;
+    }
+
+    .side-div h1::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 200px;
+      background:black;
+      animation: move-text 400ms ease-in-out forwards 400ms;
+    }
+
+    @keyframes move-text {
+      0%{
+        width: 100%;
+      }
+      100%{
+        width: 0;
+      }
+    }
+    @keyframes move-down {
+      0%{
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+      100%{
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    .form-signin {
+      width: 40%;
+      height: 600px;
+      position: relative;
+
+    }
+
+    .form-signin h1 {
+      font-family: 'Cardo', serif;
+      text-align: center;
+      margin-top: 40px;
+      font-size:40px;
+      text-transform: uppercase;
+      position: relative;
+      text-indent: -300%;
+      font-weight: 100;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+
+    .showh1 {
+      animation: show-text 1s ease-in-out forwards 1;
+    }
+
+    @keyframes show-text {
+      0%{
+        text-indent: -300%;
+
+      }
+      100%{
+        text-indent: 0%;
+
+      }
+    }
+
+    .form-signin h1::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0%;
+      height: 100%;
+      background:black;
+      top: 0;
+      left: 0;
+      animation: showh1 1s ease-in-out forwards 1;
+    }
+
+
+    @keyframes showh1 {
+      0%{
+        width: 0;
+        left: 0;
+      }
+      50%{
+        width: 100%;
+        right: 0;
+      }
+      100%{
+        width: 0;
+        right: 0;
+        left: auto;
+      }
+    }
+
+    .form-signin input, textarea {
+      width: 90%;
+      height: 40px;
+      background:rgba(245,245,245,1);
+      display: block;
+      margin: 0 auto;
+      font-size: 17px;
+      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+      border:none;
+      margin-top: 50px;
+      font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+      padding-left: 20px;
+
+    }
+
+    .move-down {
+      animation: move-down 1s ease-in-out forwards 1;
+    }
+
+    textarea {
+      height: 130px !important;
+    }
+
+
+    ::-webkit-input-placeholder {
+      color:black;
+      font-size:17px;
+      font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    }
+
+
+    .btn-signin {
+      animation: none !important;
+      width: 95% !important;
+      color:black;
+      font-size:30px;
+      background:red;
+      font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+      margin-bottom: 100px;
+      position: relative;
+      opacity: 1;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .color-btn {
+      animation: show-btn 1s ease-in-out forwards 1 200ms !important;
+    }
+
+
+    @keyframes show-btn {
+      0%{
+        background: rgb(245,245,245);
+      }
+      100%{
+        background: #4c7d15;
+        color:white;
+      }
+    }
+
+    @keyframes color-btn {
+      0%{
+        background:blue;
+
+      }
+      100%{
+        background: red;
+      }
+    }
+
+
+    .form-signin {
+      margin-bottom: 70px;
+    }
+
+    .footer h1 {
+      color:black !important;
+    }
+
+  .loader {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:black;
+
+    z-index: 9999999999999999999999999999999;
+    pointer-events: none;
   }
 
-    input[type="text"]{
-      color:white !important;
-      font-size: 17px;
+
+
+  /* Animation */
+  @-webkit-keyframes loading {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-moz-keyframes loading {
+    to { -moz-transform: rotate(360deg); }
+  }
+  @-ms-keyframes loading {
+    to { -ms-transform: rotate(360deg); }
+  }
+  @keyframes loading {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Loader (*/
+  #loading {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #777;
+    border-left: 4px solid #777;
+
+    -webkit-animation: loading 1.2s infinite linear;
+    -moz-animation: loading 1.2s infinite linear;
+    -ms-animation: loading 1.2s infinite linear;
+    animation: loading 1.2s infinite linear;
+
+  }
+
+  /* Just page styling */
+
+  #loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+  }
+
+  .loader {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:black;
+    z-index: 9999999999;
+    transition: all 500ms ease-in-out;
+  }
+
+
+  @media only screen and (max-width: 1000px) {
+      .side-div {
+        position: relative;
+        width: 100%;
+        height: 400px;
+      }
+
+    .form-signin {
+      width: 100%;
     }
+      .side-div h1 {
+        top: 130px;
+      }
+      .form-signin {
+        display: block;
+        margin: 0 auto;
+      }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .side-div h1 {
+      font-size:20px;
+      top: 190px;
+    }
+
+    .form-signin h1 {
+      font-size:20px;
+    }
+
+    .form-signin {
+      width: 100%;
+    }
+
+    .textarea {
+      height: 100px !important;
+    }
+
+    .btn-signin {
+      font-size:14px !important;
+
+    }
+  }
 </style>
 
-
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<%= stylesheet_link_tag 'contact' %>
 <%= render 'partials/show_logo' %>
+<%= render 'partials/nav' %>
 
 
-
-
-
-<div class="bg">
-
-  <%= render 'partials/nav' %>
-
-  <h1 class="message"> <span style="font-weight: 100 !important; ">THERE’S NO</span> <br/> <span style="letter-spacing: 3px; font-weight: 400;">PLACE LIKE</span> <br/> <span class="home">HOME</span></h1>
-  <div class="container">
-    <div class="frame">
-      <div class="nav">
-        <h1 class="start" style="text-transform: uppercase; font-family: 'Open Sans', sans-serif; font-size: 20px;">Contact <br/> <span style="font-weight: 900">Vanmar Lending</span></h1>
-      </div>
-      <div>
-
-
-          <%= simple_form_for @contact, html: { class: 'form-signin' }, url: new_contact_path do |f| %>
-
-
-
-
-              <label>Name</label>
-              <%= f.text_field :name, required: true, class: 'form-styling' %>
-
-
-              <label>Phone Number</label>
-              <%= f.text_field :number, required: true, class: 'form-styling' %>
-
-              <label >Email</label>
-              <%= f.text_field :email, required: true, class: "form-styling" %>
-
-              <label>Message</label>
-              <%= f.text_area :message, as: :text, required: false, input_html: { rows: 10 }, hint: 'Max 2000 characters', class: "form-styling textarea" %>
-
-
-              <div class="btn-animate">
-                <%= f.button :submit, 'Send message', class: 'btn-signin' %>
-              </div>
-
-        <% end %>
-
-        <div  class="success">
-            <svg width="270" height="270" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 60 60" id="check" ng-class="checked ? 'checked' : ''">
-              <path fill="#ffffff" d="M40.61,23.03L26.67,36.97L13.495,23.788c-1.146-1.147-1.359-2.936-0.504-4.314
-                  c3.894-6.28,11.169-10.243,19.283-9.348c9.258,1.021,16.694,8.542,17.622,17.81c1.232,12.295-8.683,22.607-20.849,22.042
-                  c-9.9-0.46-18.128-8.344-18.972-18.218c-0.292-3.416,0.276-6.673,1.51-9.578" />
-              <div class="successtext">
-                <p> Thanks for signing up! Check your email for confirmation.</p>
-              </div>
-          </div>
-      </div>
-    </div>
-
-    <a id="refresh" value="Refresh" onClick="history.go()">
-      <svg class="refreshicon"   version="1.1" id="Capa_1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           width="25px" height="25px" viewBox="0 0 322.447 322.447" style="enable-background:new 0 0 322.447 322.447;"
-           xml:space="preserve">
-        <path  d="M321.832,230.327c-2.133-6.565-9.184-10.154-15.75-8.025l-16.254,5.281C299.785,206.991,305,184.347,305,161.224
-                c0-84.089-68.41-152.5-152.5-152.5C68.411,8.724,0,77.135,0,161.224s68.411,152.5,152.5,152.5c6.903,0,12.5-5.597,12.5-12.5
-                c0-6.902-5.597-12.5-12.5-12.5c-70.304,0-127.5-57.195-127.5-127.5c0-70.304,57.196-127.5,127.5-127.5
-                c70.305,0,127.5,57.196,127.5,127.5c0,19.372-4.371,38.337-12.723,55.568l-5.553-17.096c-2.133-6.564-9.186-10.156-15.75-8.025
-                c-6.566,2.134-10.16,9.186-8.027,15.751l14.74,45.368c1.715,5.283,6.615,8.642,11.885,8.642c1.279,0,2.582-0.198,3.865-0.614
-                l45.369-14.738C320.371,243.946,323.965,236.895,321.832,230.327z"/>
-      </svg>
-    </a>
-  </div>
+<div class="loader">
+  <div id="loading"></div>
 </div>
+
+  <div class="side-div">
+    <h1><span style="background:rgba(255,255,255,1);">There's no place like Home</span></h1>
+
+  </div>
+
+  <%= simple_form_for @contact, html: { class: 'form-signin' }, url: new_contact_path do |f| %>
+
+      <h1>Contact Us</h1>
+
+      <%= f.text_field :name, required: true, class: 'form-styling', placeholder: "Name" %>
+
+
+      <%= f.text_field :number, required: true, class: 'form-styling', placeholder: "Phone Number" %>
+
+      <%= f.text_field :email, required: true, class: "form-styling", placeholder: "Email" %>
+
+      <%= f.text_field :message, as: :text, required: false, input_html: { rows: 10 }, hint: 'Max 2000 characters', class: "form-styling textarea", placeholder: "Message" %>
+
+
+      <div class="btn-animate">
+        <%= f.button :submit, 'Send message', class: 'btn-signin new-btn' %>
+      </div>
+<% end %>
+
 
 <%= render 'partials/footer' %>
 
-
-<%= javascript_include_tag 'contact' %>
 <%= javascript_include_tag 'nav' %>
 
+
+<script>
+  $(window).on("load", function(){
+
+      $(".loader").css({
+          opacity: "0",
+          transform: "translateY(-30px)"
+      });
+
+
+      $(".form-signin input, textarea").addClass("move-down");
+      $(".form-signin h1").addClass("showh1");
+      $(".side-div h1").addClass("move-h1-down");
+      setTimeout(function(){
+          $(".btn-signin").addClass("color-btn");
+      },200);
+
+  });
+</script>
