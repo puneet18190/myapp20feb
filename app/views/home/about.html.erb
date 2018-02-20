@@ -42,7 +42,7 @@
     display: block;
     margin: 0 auto;
     width: 100%;
-    transform: translateY(260px);
+    transform: translateY(150px);
     opacity: 1;
     animation: move-up 400ms ease-in-out forwards 1;
   }
@@ -84,6 +84,26 @@
       color:black !important;
     }
 
+    button {
+      text-transform: uppercase;
+      color: white;
+      border: none;
+      font-weight: bold;
+      height: 50px;
+      width: 250px;
+      font-size: 11px;
+      border-radius: .1em;
+      margin-top: 30px;
+      cursor: pointer;
+      background: #4c7d15;
+      font-family: "Helvetica Neue",sans-serif;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      transition: all 400ms ease-in-out;
+      margin: 0 auto;
+      margin-left: 44%;
+    }
+
   @media only screen and (max-width: 600px) {
     .title {
       font-size: 50px !important;
@@ -100,7 +120,7 @@
 <%= render 'partials/nav' %>
 <%= render 'partials/show_logo' %>
 
-<header class="header">
+<header class="header" style="height:50%">
   <div class="text-vertical-center">
     <h1 class="title">About Us</h1>
     <a href="#about">
@@ -117,12 +137,11 @@
     <h1 class="page-header">About</h1>
     <div class="col-md-8">
       <div class="p-content">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Founded in 2012 by Carlos Martinez and Kristen (Vance) Martinez and named by blending their last names together, Vance and Martinez, became the family-owned business, VanMar Lending. Vanmar Lending is a full-service Mortgage Lending Team offering FHA, VA, USDA, Conventional and Jumbo Loan mortgage programs.</p> 
 
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
+        <p>The Team’s mission and commitment to you is dedicated to facilitating the dream of homeownership by providing you with Five-Star Service. More importantly, our passion and drive is built around winning. Team Vanmar wins at communication, wins at problem solving, wins at getting the job done and getting it done on time. We are confident that you will quickly see how this “winning” attitude separates us from the rest. Please give us a call.we will make it happen for you!</p>
       </div>
+      <button>Get Started</button>
     </div>
 
   </div>

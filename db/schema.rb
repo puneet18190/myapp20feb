@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110210714) do
+ActiveRecord::Schema.define(version: 20171110034840) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,10 +38,6 @@ ActiveRecord::Schema.define(version: 20171110210714) do
     t.string "mp4_content_type"
     t.integer "mp4_file_size"
     t.datetime "mp4_updated_at"
-    t.string "poster_file_name"
-    t.string "poster_content_type"
-    t.integer "poster_file_size"
-    t.datetime "poster_updated_at"
   end
 
 end
